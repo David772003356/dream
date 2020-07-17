@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigdream.dream.mapper.DreamGoodsMapper">
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.bigdream.dream.entity.DreamGoodsDO" id="DreamGoodsMap">
+        <result property="goodsId" column="goods_id"/>
+        <result property="goodsName" column="goods_name"/>
+        <result property="goodsPrice" column="goods_price"/>
+        <result property="goodsStatus" column="goods_status"/>
+        <result property="description" column="description"/>
+        <result property="crtUserName" column="crt_user_name"/>
+        <result property="crtUserId" column="crt_user_id"/>
+        <result property="crtTime" column="crt_time"/>
+        <result property="updUserName" column="upd_user_name"/>
+        <result property="updUserId" column="upd_user_id"/>
+        <result property="updTimie" column="upd_timie"/>
+    </resultMap>
+
+    <select id="getGoodsById" parameterType="string" resultType="com.bigdream.dream.entity.DreamGoodsDO">
+        select
+        goods_id,
+        goods_name,
+        goods_price,
+        goods_status,
+        description,
+        crt_user_name,
+        crt_user_id,
+        crt_time,
+        upd_user_name,
+        upd_user_id,
+        upd_timie
+        from
+        dream_goods
+        where
+        goods_id = #{goodsId}
+    </select>
+
+</mapper>

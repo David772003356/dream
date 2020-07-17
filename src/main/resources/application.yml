@@ -17,3 +17,28 @@ spring:
         min-idle: 0
     #连接超时时间
     timeout: 30000
+  datasource:
+    name: dream
+    url: jdbc:mysql://192.168.207.128:3306/dream?useUnicode=true&characterEncoding=UTF8
+    username: root
+    password: root
+    # 使用druid数据源
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+# 配置数据库
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+#    type-aliases-package: com.bigdream.dream.entity
