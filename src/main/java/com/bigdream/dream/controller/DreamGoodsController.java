@@ -1,5 +1,6 @@
 package com.bigdream.dream.controller;
 
+import com.bigdream.dream.dto.GoodsDTO;
 import com.bigdream.dream.entity.DreamGoodsDO;
 import com.bigdream.dream.service.DreamGoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,13 @@ import org.springframework.web.bind.annotation.*;
 public class DreamGoodsController {
     @Autowired
     private DreamGoodsService dreamGoodsService;
+
+    @PostMapping("/saveGoods")
+    @ResponseBody
+    public boolean saveGoods(@RequestBody GoodsDTO req){
+        return dreamGoodsService.saveGoods(req);
+    }
+
 
     @GetMapping("/getGoodsById")
     @ResponseBody

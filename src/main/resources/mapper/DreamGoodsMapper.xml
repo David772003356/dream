@@ -17,6 +17,36 @@
         <result property="updTimie" column="upd_timie"/>
     </resultMap>
 
+    <insert id="saveGoods" parameterType="com.bigdream.dream.dto.GoodsDTO">
+        insert into dream_goods
+        (
+        goods_id,
+        goods_name,
+        goods_price,
+        goods_status,
+        description,
+        crt_user_name,
+        crt_user_id,
+        crt_time,
+        upd_user_name,
+        upd_user_id,
+        upd_timie
+        )
+        values (
+        #{goodsId},
+        #{goodsName},
+        #{goodsPrice},
+        #{goodsStatus},
+        #{description},
+        #{userName},
+        #{userId},
+        #{currentTime},
+        #{userName},
+        #{userId},
+        #{currentTime}
+        )
+    </insert>
+
     <select id="getGoodsById" parameterType="string" resultType="com.bigdream.dream.entity.DreamGoodsDO">
         select
         goods_id,

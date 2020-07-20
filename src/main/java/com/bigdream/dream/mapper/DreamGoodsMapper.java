@@ -1,8 +1,8 @@
 package com.bigdream.dream.mapper;
 
+import com.bigdream.dream.dto.GoodsDTO;
 import com.bigdream.dream.entity.DreamGoodsDO;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -13,9 +13,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DreamGoodsMapper {
 
+    int saveGoods(GoodsDTO req);
+
     DreamGoodsDO getGoodsById(@Param("goodsId") String goodsId);
 
-    @Select("select * from dream_goods")
-    DreamGoodsDO getGoodsByIds(@Param("goodsId") String goodsId);
 
 }
