@@ -3,7 +3,7 @@ Accept: */*
 Content-Type: application/json;charset=utf-8
 
 {
-  "goodsName": "小米电视",
+  "goodsName": "小米电视2",
   "goodsPrice": 1999.99,
   "goodsStatus": 0,
   "description": "品牌是个好品牌",
