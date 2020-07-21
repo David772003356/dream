@@ -1,0 +1,10 @@
+GET http://localhost:8080/redis/set?key="广州"&value="广东"
+Accept: */*
+Content-Type: application/json;charset=utf-8
+
+###
+GET http://localhost:8080/redis/get?key="广州"
+Accept: */*
+Content-Type: application/json;charset=utf-8
+
+###

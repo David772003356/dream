@@ -1,6 +1,6 @@
 spring:
   redis:
-    host: 192.168.207.128
+    host: 106.53.97.151
     port: 6379
     #密码默认是空
     password:
@@ -19,7 +19,7 @@ spring:
     timeout: 30000
   datasource:
     name: dream
-    url: jdbc:mysql://192.168.207.128:3306/dream?useUnicode=true&characterEncoding=UTF8
+    url: jdbc:mysql://106.53.97.151:3306/dream?useUnicode=true&characterEncoding=UTF8
     username: root
     password: root
     # 使用druid数据源
