@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigdream.dream.mapper.DreamUserInfoMapper">
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.bigdream.dream.entity.DreamUserInfoDO" id="DreamGoodsMap">
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="userName" column="user_name"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="password" column="password"/>
+        <result property="email" column="email"/>
+        <result property="mobile" column="mobile"/>
+        <result property="accountStatus" column="account_status"/>
+        <result property="crtTime" column="crt_time"/>
+        <result property="updTimie" column="upd_timie"/>
+    </resultMap>
+
+    <insert id="saveUserInfo" parameterType="com.bigdream.dream.dto.UserDTO">
+        insert into dream_goods
+        (
+        id,
+        user_id,
+        user_name,
+        nick_name,
+        password,
+        email,
+        mobile,
+        account_status,
+        crt_time,
+        upd_time
+        )
+        values (
+        #{id},
+        #{userId},
+        #{userName},
+        #{nickName},
+        #{password},
+        #{email},
+        #{mobile},
+        #{accountStatus},
+        #{crtTime},
+        #{updTimie}
+        )
+    </insert>
+
+</mapper>

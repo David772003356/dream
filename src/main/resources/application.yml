@@ -1,3 +1,7 @@
+#MYSQL_HOST:192.168.207.128
+#DB_USER: root
+#DB_PASSWORD: root
+
 spring:
   redis:
     host: 106.53.97.151
@@ -19,7 +23,11 @@ spring:
     timeout: 30000
   datasource:
     name: dream
-    url: jdbc:mysql://106.53.97.151:3306/dream?useUnicode=true&characterEncoding=UTF8
+#    url: jdbc:mysql://${MYSQL_HOST:106.53.97.151}:3306/dream?useUnicode=true&characterEncoding=UTF8
+#    username: ${DB_USER}
+#    password: ${DB_PASSWORD}
+#    url: jdbc:mysql://106.53.97.151:3306/dream?useUnicode=true&characterEncoding=UTF8
+    url: jdbc:mysql://192.168.207.128:3306/dream?useUnicode=true&characterEncoding=UTF8
     username: root
     password: root
     # 使用druid数据源
