@@ -3,7 +3,7 @@
 
 <mapper namespace="com.bigdream.dream.mapper.DreamUserInfoMapper">
     <!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="com.bigdream.dream.entity.DreamUserInfoDO" id="DreamGoodsMap">
+    <resultMap type="com.bigdream.dream.entity.DreamUserInfoDO" id="DreamUserMap">
         <result property="id" column="id"/>
         <result property="userId" column="user_id"/>
         <result property="userName" column="user_name"/>
@@ -44,4 +44,18 @@
         )
     </insert>
 
+    <select id="getUserByAccountAndPassword" parameterType="com.bigdream.dream.dto.UserDTO" resultMap="DreamUserMap">
+        select
+        *
+        from
+        dream_user_info
+        where
+        password=#{password}
+        <if test="userName!=null and userName!=''">
+           and user_name = #{userName}
+        </if>
+        <if test="email!=null and email!=''">
+           and email = #{email}
+        </if>
+    </select>
 </mapper>

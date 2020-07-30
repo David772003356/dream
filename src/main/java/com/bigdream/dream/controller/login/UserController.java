@@ -1,5 +1,6 @@
 package com.bigdream.dream.controller.login;
 
+import com.bigdream.dream.base.msg.ObjectRestResponse;
 import com.bigdream.dream.dto.UserDTO;
 import com.bigdream.dream.service.login.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,14 @@ public class UserController {
 
     @PostMapping("/register")
     @ResponseBody
-    public boolean register(UserDTO req){
+    public boolean register(@RequestBody UserDTO req){
         return userService.register(req);
     }
+
+    @PostMapping("/login")
+    @ResponseBody
+    public ObjectRestResponse login(@RequestBody UserDTO req){
+        return userService.login(req);
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.bigdream.dream.mapper;
 
+import com.bigdream.dream.dto.UserDTO;
 import com.bigdream.dream.entity.DreamUserInfoDO;
 import org.springframework.stereotype.Repository;
 
@@ -13,4 +14,5 @@ public interface DreamUserInfoMapper {
 
     void saveUserInfo(DreamUserInfoDO userInfoDO);
 
+    DreamUserInfoDO getUserByAccountAndPassword(UserDTO userDTO);
 }
