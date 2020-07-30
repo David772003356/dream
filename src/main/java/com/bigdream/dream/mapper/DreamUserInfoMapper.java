@@ -1,7 +1,6 @@
 package com.bigdream.dream.mapper;
 
-import com.bigdream.dream.dto.UserDTO;
-import com.bigdream.dream.entity.DreamGoodsDO;
+import com.bigdream.dream.entity.DreamUserInfoDO;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,6 +11,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DreamUserInfoMapper {
 
-    DreamGoodsDO saveUserInfo(UserDTO req);
+    void saveUserInfo(DreamUserInfoDO userInfoDO);
 
 }

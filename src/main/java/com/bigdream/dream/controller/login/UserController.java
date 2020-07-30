@@ -19,7 +19,7 @@ public class UserController {
 
     @PostMapping("/register")
     @ResponseBody
-    public void register(@RequestBody UserDTO req){
-        userService.register(req);
+    public boolean register(UserDTO req){
+        return userService.register(req);
     }
 }

@@ -16,8 +16,8 @@
         <result property="updTimie" column="upd_timie"/>
     </resultMap>
 
-    <insert id="saveUserInfo" parameterType="com.bigdream.dream.dto.UserDTO">
-        insert into dream_goods
+    <insert id="saveUserInfo" parameterType="com.bigdream.dream.entity.DreamUserInfoDO">
+        insert into dream_user_info
         (
         id,
         user_id,

@@ -30,17 +30,20 @@ alter table dream_goods
 
 CREATE TABLE `dream_user_info`
 (
-    `id`             varchar(32) NOT NULL COMMENT '主键',
-    `user_id`        varchar(32)  DEFAULT NULL COMMENT '用户id',
-    `user_name`      varchar(32)  DEFAULT NULL COMMENT '用户名称',
-    `nick_name`      varchar(32)  DEFAULT NULL COMMENT '昵称',
-    `password`       tinyint(32)   DEFAULT NULL COMMENT '密码',
-    `email`          varchar(32) DEFAULT NULL COMMENT '邮箱',
-    `mobile`         varchar(32) DEFAULT NULL COMMENT '电话',
-    `account_status` tinyint(4)  DEFAULT NULL COMMENT '账号状态（0-未激活，1-激活）',
-    `crt_time`       datetime     DEFAULT NULL COMMENT '创建时间',
-    `upd_time`       datetime     DEFAULT NULL COMMENT '更新时间',
+    `id`             varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键',
+    `user_id`        varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '用户id',
+    `user_name`      varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '用户名称',
+    `nick_name`      varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '昵称',
+    `password`       varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '密码',
+    `email`          varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '邮箱',
+    `mobile`         varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '电话',
+    `account_status` tinyint(4)                                                   NULL DEFAULT NULL COMMENT '账号状态（0-未激活，1-激活）',
+    `crt_time`       datetime(0)                                                  NULL DEFAULT NULL COMMENT '创建时间',
+    `upd_time`       datetime(0)                                                  NULL DEFAULT NULL COMMENT '更新时间',
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4
-  ROW_FORMAT = DYNAMIC COMMENT ='用户信息';
+  CHARACTER SET = utf8mb4
+  COLLATE = utf8mb4_general_ci COMMENT = '用户信息'
+  ROW_FORMAT = Compact;
+
+SET FOREIGN_KEY_CHECKS = 1;
