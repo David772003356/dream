@@ -1,0 +1,14 @@
+POST http://localhost:8080/queue/test
+Accept: */*
+Content-Type: application/json;charset=utf-8
+
+{"aaa" : "queue"}
+
+###
+POST http://localhost:8080/topic/test
+Accept: */*
+Content-Type: application/json;charset=utf-8
+
+{"aaa" : "topic"}
+
+###

@@ -1,0 +1,23 @@
+POST http://localhost:8080/dream/user/register
+Accept: */*
+Content-Type: application/json;charset=utf-8
+
+{
+  "userName":"772003356",
+  "nickName":"大炜",
+  "password":"123456",
+  "email":"772003356@qq.com",
+  "mobile":"18998123456"
+}
+
+###
+POST http://localhost:8080/dream/user/login
+Accept: */*
+Content-Type: application/json;charset=utf-8
+
+{
+  "userName":"772003356",
+  "password":"123456"
+}
+
+###
