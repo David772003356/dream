@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigdream.dream.mapper.DreamScheduleCronMapper">
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.bigdream.dream.entity.DreamScheduleCronDO" id="DreamScheduleCronMap">
+        <result property="id" column="id"/>
+        <result property="taskId" column="task_id"/>
+        <result property="taskName" column="task_name"/>
+        <result property="cron" column="cron"/>
+        <result property="crtTime" column="crt_time"/>
+        <result property="updTimie" column="upd_timie"/>
+    </resultMap>
+
+    <select id="getScheduleCronByTaskId" parameterType="string" resultMap="DreamScheduleCronMap">
+       select * from dream_schedule_cron where task_id = #{taskId}
+    </select>
+</mapper>

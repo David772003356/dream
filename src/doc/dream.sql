@@ -1,17 +1,8 @@
-/*==============================================================*/
-/* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2020/7/17 18:04:13                           */
-/*==============================================================*/
 
-
-drop table if exists dream_goods;
-
-/*==============================================================*/
-/* Table: dream_goods                                           */
-/*==============================================================*/
 create table dream_goods
 (
-    goods_id      varchar(32) not null comment '商品id',
+    id      varchar(32) not null comment '主键id',
+    goods_id      varchar(32) default null comment '商品id',
     goods_name    varchar(64)    default NULL comment '商品名称',
     goods_price   decimal(15, 2) default NULL comment '商品价格',
     goods_status  tinyint        default NULL comment '商品状态',
@@ -47,3 +38,15 @@ CREATE TABLE `dream_user_info`
   ROW_FORMAT = Compact;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE `dream_schedule_cron`
+(
+    `id`        varchar(32) NOT NULL COMMENT '主键id',
+    `task_id`   varchar(32) DEFAULT NULL COMMENT '任务id',
+    `task_name` varchar(32) DEFAULT NULL COMMENT '任务名称',
+    `cron`      varchar(32) DEFAULT NULL COMMENT 'cron表达式',
+    `crt_time`  datetime    DEFAULT NULL COMMENT '创建时间',
+    `upd_timie` datetime    DEFAULT NULL COMMENT '更新时间',
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4 COMMENT ='定时任务配置信息';

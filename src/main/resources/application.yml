@@ -59,15 +59,16 @@ spring:
     non-blocking-redelivery: false  # 是否在回滚回滚消息之前停止消息传递。这意味着当启用此命令时，消息顺序不会被保留。
     send-timeout: 0     # 等待消息发送响应的时间。设置为0等待永远。
     queue-name: active.queue
-    topic-name: active.topic.name.model
+    topic-name: active.topic.name.modelss
   #  packages:
   #    trust-all: true #不配置此项，会报错
   pool:
     enabled: true
     max-connections: 10   #连接池最大连接数
     idle-timeout: 30000   #空闲的连接过期时间，默认为30秒
-    # jms:
-    #   pub-sub-domain: true  #默认情况下activemq提供的是queue模式，若要使用topic模式需要配置下面配置
+
+#     jms:
+#       pub-sub-domain: true  #默认情况下activemq提供的是queue模式，若要使用topic模式需要配置下面配置
 
     # 是否信任所有包
     #spring.activemq.packages.trust-all=
