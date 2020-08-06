@@ -13,4 +13,5 @@ import org.springframework.web.multipart.MultipartFile;
 public interface FileService {
 
     ObjectRestResponse upLoadFile(MultipartFile file);
+
 }

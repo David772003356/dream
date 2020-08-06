@@ -17,6 +17,12 @@ import java.io.IOException;
 @Service
 @Slf4j
 public class FileServiceImpl implements FileService {
+
+    /**
+    * @Description: 文件上传
+    * @Author: Wu Yuwei
+    * @Date: 2020/8/6 14:52
+    */
     @Override
     public ObjectRestResponse upLoadFile(MultipartFile file) {
         try {
