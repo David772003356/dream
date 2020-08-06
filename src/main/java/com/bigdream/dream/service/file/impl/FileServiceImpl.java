@@ -26,11 +26,11 @@ public class FileServiceImpl implements FileService {
             String filename = file.getOriginalFilename();
             String suffixName = filename.substring(filename.lastIndexOf("."));
             log.info("上传的文件名称：filename:{}",filename+"后缀名：suffixName:{}",suffixName);
-            String filePath="D:\\resource";
+            String filePath="D:\\newFile/";
             String path=filePath+filename;
             File generatorFile = new File(path);
             // 检测是否存在目录
-            if (generatorFile.getParentFile().exists()){
+            if (!generatorFile.getParentFile().exists()){
                 generatorFile.getParentFile().mkdirs();// 新建文件夹
             }
             file.transferTo(generatorFile);// 文件写入
